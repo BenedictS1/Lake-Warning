@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Safety of the locals and visitors!</title>
+    <style>
+        .center-text {
+            text-align: center;
+        }
+
+        body {
+            background-image: url('Dam.jpg');
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            background-size: cover;
+
+            background-color: royalblue;
+            color: white;
+            text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+            font-family: Arial, sans-serif;
+        }
+    </style>
+    <script>
+        function changeLanguage(lang) {
+            var elements = document.querySelectorAll('[data-translate]');
+            elements.forEach(function(element) {
+                var translation = translations[element.getAttribute('data-translate')][lang];
+                if (translation) {
+                    element.textContent = translation;
+                }
+            });
+        }
+
+        var translations = {
+            // For the Locals
+            'title': {
+                'en': 'Safety of the Locals and Visitors',
+                'es': 'Seguridad de los locales y visitantes',
+                'de': 'Sicherheit der Einheimischen und Besucher',
+                'ro': 'Siguranța localnicilor si vizitatorilor'
+            },
+            'civilInformation': {
+                'en': 'Civil Information',
+                'es': 'Información Civil',
+                'de': 'Zivilinformationen',
+                'ro': 'Informații civile'
+            },
+            'civilName':{
+                'en': 'Name',
+                'es': 'Nombre',
+                'de': 'Name',
+                'ro': 'Nume'
+            },
+            'civilSurname':{
+                'en': 'Surname',
+                'es': 'Apellido',
+                'de': 'Nachname',
+                'ro': 'Nume de familie'
+            },
+            'civilPhone':{
+                'en': 'Phone',
+                'es': 'Teléfono',
+                'de': 'Telefon',
+                'ro': 'Telefon'
+            },
+            // For the Visitors 
+            'visitorInformation': {
+                'en': 'Visitor Information',
+                'es': 'Información para visitantes',
+                'de': 'Besucherinformationen',
+                'ro': 'Informații despre vizitator'
+            },
+            'visitorName':{
+                'en': 'Name',
+                'es': 'Nombre',
+                'de': 'Name',
+                'ro': 'Nume'
+            },
+            'visitorSurname':{
+                'en': 'Surname',
+                'es': 'Apellido',
+                'de': 'Nachname',
+                'ro': 'Nume de familie'
+            },
+            'visitorPhone':{
+                'en': 'Phone',
+                'es': 'Teléfono',
+                'de': 'Telefon',
+                'ro': 'Telefon'
+            },
+            'visitDuration':{
+                'en': 'Visit Duration:',
+                'es': 'Duración de la visita:',
+                'de': 'Dauer des Besuchs:',
+                'ro': 'Durata vizitei:'
+            },
+            'visitDuration':{
+                'en': 'Visit Duration:',
+                'es': 'Duración de la visita:',
+                'de': 'Dauer des Besuchs:',
+                'ro': 'Durata vizitei:'
+            }
+        };
+    </script>
+</head>
+<body onload="changeLanguage('en')">
+    <select onchange="changeLanguage(this.value)">
+        <option value="en">English</option>
+        <option value="es">Spanish</option>
+        <option value="de">German</option>
+        <option value="ro">Romanian</option>
+    </select>
+    <div class="center-text">
+        <h1 data-translate="title"></h1>
+        <form id="civilForm">
+            <h2 data-translate="civilInformation"></h2>
+            <!-- Add more content here... -->
+            <label for data-translate = "civilName"></label><br>
+            <input type="text" id ="civilName" name="civilName"><br>
+            <label for data-translate = "civilSurname"></label><br>
+            <input type="text" id ="civilSurname" name="civilSurname"><br>
+            <label for data-translate ="civilPhone"></label><br>
+            <input type="tel" id="civilPhone" name="civilPhone"><br>
+            <input type="submit" value ="Submit">
+        </form>
+        <!-- Add more forms here... -->
+        <br>
+        <form id="visitorForm">
+        <h2 data-translate="visitorInformation"></h2>
+        <label for data-translate ="visitorName"></label><br>
+        <input type="text" id="visitorName" name="visitorName"><br>
+        <label for data-translate ="visitorSurname"></label><br>
+        <input type="text" id="visitorSurname" name="visitorSurname"><br>
+        <label for data-translate ="visitorPhone"></label><br>
+        <input type="tel" id="visitorPhone" name="visitorPhone"><br>
+        <br>
+        <label for data-translate ="visitDuration"></label><br>
+            <select id="visitDuration" name="visitDuration">
+                <option value="1">1 Week/Semana/Woche/Săptămână</option>
+                <option value="2">2 weeks/Semanas/Wochen/Săptămâni</option>
+                <option value="3">3 weeks/Semanas/Wochen/Săptămâni</option>
+            </select><br>
+        <input type="submit" value ="Submit">
+        </form>
+    </div>
+
+    <footer>
+        <p>Copyright &copy; 2024 Benedict</p>
+    </footer>
+</body>
+</html>
